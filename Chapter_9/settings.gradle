@@ -1,0 +1,6 @@
+include ':PlayVedio'
+include ':PlayAudio'
+include ':CameraAlbum'
+include ':notification'
+include ':app'
+rootProject.name = "Chapter_9"

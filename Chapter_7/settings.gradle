@@ -1,0 +1,7 @@
+include ':sqlite'
+include ':rememberpassword'
+include ':sharedpreferences'
+include ':filestorage'
+include ':app'
+include ':practise'
+rootProject.name = "Chapter_7"

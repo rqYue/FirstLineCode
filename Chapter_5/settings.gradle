@@ -1,0 +1,5 @@
+include ':NewsApp'
+include ':FragmentLifecycle'
+include ':AddFragment'
+include ':app'
+rootProject.name = "Chapter_5"

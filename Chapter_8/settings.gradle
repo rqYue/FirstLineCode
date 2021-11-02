@@ -1,0 +1,6 @@
+include ':ContentProviderVisit'
+include ':myContentProvider'
+include ':contactContentProvider'
+include ':runtinmepermission'
+include ':app'
+rootProject.name = "Chapter_8"

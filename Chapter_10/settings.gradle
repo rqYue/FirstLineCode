@@ -1,0 +1,6 @@
+include ':IntentService'
+include ':ForeService'
+include ':ServiceTest'
+include ':HandlerTest'
+include ':app'
+rootProject.name = "Chapter_10"

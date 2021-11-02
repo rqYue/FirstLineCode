@@ -1,0 +1,7 @@
+include ':practise'
+include ':orderbroadcast'
+include ':standardbroadcast'
+include ':staticreceiver'
+include ':dynamicReceiver'
+include ':app'
+rootProject.name = "Chapter_6"
