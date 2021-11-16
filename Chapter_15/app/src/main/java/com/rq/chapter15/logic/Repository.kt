@@ -4,6 +4,7 @@ import androidx.lifecycle.liveData
 import com.rq.chapter15.logic.model.Place
 import com.rq.chapter15.logic.network.SunnyWeatherNetwork
 import kotlinx.coroutines.Dispatchers
+import java.lang.RuntimeException
 
 object Repository {
 
@@ -15,7 +16,7 @@ object Repository {
                 Result.success(places)
             }
             else {
-
+                Result.failure(RuntimeException("response status is ${placeResponse.status}"))
             }
         } catch (e : Exception) {
             Result.failure<List<Place>>(e)

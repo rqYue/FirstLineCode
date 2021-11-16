@@ -30,7 +30,6 @@ class PlaceFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_place, container, false)
     }
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -53,18 +52,18 @@ class PlaceFragment : Fragment() {
         }
 
         viewModel.placeLiveData.observe(viewLifecycleOwner, Observer { result ->
-            val places = result
+            val places = result.getOrNull()
 
-//            if(places != null){
-//                recyclerView.visibility = View.VISIBLE
-//                bgImageView.visibility = View.GONE
-//                viewModel.placeList.clear()
-//                viewModel.placeList.addAll(places)
-//                adapter.notifyDataSetChanged()
-//            } else {
-//                Toast.makeText(activity, "未能查询到任何地点", Toast.LENGTH_SHORT).show()
-//                result
-//            }
+            if(places != null){
+                recyclerView.visibility = View.VISIBLE
+                bgImageView.visibility = View.GONE
+                viewModel.placeList.clear()
+                viewModel.placeList.addAll(places)
+                adapter.notifyDataSetChanged()
+            } else {
+                Toast.makeText(activity, "未能查询到任何地点", Toast.LENGTH_SHORT).show()
+                result.exceptionOrNull()?.printStackTrace()
+            }
         })
 
     }
