@@ -8,7 +8,9 @@ import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
+import android.os.Process.myUid
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.BufferedReader
 
 class MainActivity : AppCompatActivity() {
 

@@ -7,6 +7,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
@@ -24,7 +25,10 @@ class MyService : Service() {
             manager.createNotificationChannel(channel)
         }
 
-        val intent = Intent(this, MainActivity::class.java)
+//        val intent = Intent(this, MainActivity::class.java)
+
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://m.5i5j.com/bj/appcms/zixun?id=147604"));
+
         val pi = PendingIntent.getActivity(this, 0, intent, 0)
         val notification = NotificationCompat.Builder(this, "my_service")
             .setContentTitle("content")
